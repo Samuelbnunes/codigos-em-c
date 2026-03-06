@@ -1,38 +1,33 @@
 #include <stdio.h>
 
-float PedirNumero(float num1, float num2)
+float PedirNumero(void)
 {
-    printf("Digite o primeiro numero: ");
-    scanf("%f", &num1);
-    printf("Digite o segundo numero: ");
-    scanf("%f", &num2);
-    return num1, num2;
+    float num;
+    printf("Digite um numero: ");
+    scanf("%f", &num);
+    return num;
 }
 
 float Soma(float num1, float num2)
 {
-    float PedirNumero(float num1, float num2);
     float resultado = num1 + num2;
     return resultado;
 }
 
 float Subtracao(float num1, float num2)
 {
-    float PedirNumero(float num1, float num2);
     float resultado = num1 - num2;
     return resultado;
 }
 
 float Multiplicacao(float num1, float num2)
 {
-    float PedirNumero(float num1, float num2);
     float resultado = num1 * num2;
     return resultado;
 }
 
 float Divisao(float num1, float num2)
 {
-    float PedirNumero(float num1, float num2);
     float resultado = num1 / num2;
     return resultado;
 }
@@ -50,6 +45,11 @@ int main()
     printf("0 - Sair\n\n");
     printf("Escolha uma opcao: ");
     scanf("%d", &opcao);
+
+    if (opcao >= 1 && opcao <= 4) {
+        num1 = PedirNumero();
+        num2 = PedirNumero();
+    }
 
     switch (opcao)
     {
@@ -74,7 +74,7 @@ int main()
         break;
 
     default:
-        printf("Opcao Invalida\n");
+        printf("Opcao Invalida!\n");
         break;
     }
 }
